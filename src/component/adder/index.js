@@ -1,10 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
+// import {useNavigate} from 'react-router' ; 
+// import {useNavigate} from 'react-router-dom';
 
-const Adder = () => {
+export const Adder = () => {
+const[score,setScore] = useState(0);
+// const navigate = useNavigate()
+
+ const add1 = () =>{
+  setScore(score+ 1)
+ }
+
+//  navigate("/display")
   return (
-    <>
-   
-    </>
+    <div className='run'>
+      {
+     <input type='button' value="1" onClick={add1} />
+    }
+    </div>
   )
 }
 
