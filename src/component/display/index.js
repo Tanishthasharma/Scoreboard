@@ -6,6 +6,7 @@ import {Wrapper} from './style'
 export const Display = () => {
     const[score, setScore ] = useState(0);
     const[wicket, setWickets ] = useState(0);
+    // const[overs,setOvers] = useState(0);
     const [past, setPast] = useState([]);
     const [present, setPresent] = useState(null);
 
@@ -27,6 +28,10 @@ export const Display = () => {
      const add6 = () =>{
       setScore(score + 6)
      }
+
+     const out = () =>{
+        setWickets(wicket + 1)
+        }
       
     //  const undo = () =>{
     //   if(past.length == 0) return;
@@ -56,7 +61,7 @@ export const Display = () => {
             <input type='button' value="6" onClick={add6} />
             <input type='button' value="Wide"  />
               <input type='button' value="No Ball"  />
-            <input type='button' value="Out"  />
+            <input type='button' value="Out"  onClick={out} />
             <input type='button' value="Undo"  />
       </div>
         }
