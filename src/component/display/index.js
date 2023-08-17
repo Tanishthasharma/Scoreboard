@@ -66,16 +66,16 @@ export const Display = () => {
       <div className='run'>
         {
         <div>
-            {/* <input type='button' value="0" onClick={add0} /> */}
+            <input type='button' value="0" onClick={add0} />
               <input type='button'  value='1' onClick={() => <Mark  run={1}/>} />
-               {/* <input type='button' value="2" onClick={add2} />
+               <input type='button' value="2" onClick={add2} />
                <input type='button' value="3" onClick={add3} />
               <input type='button' value="4" onClick={add4} />
             <input type='button' value="6" onClick={add6} />
             <input type='button' value="Wide" onClick={wide} />
               <input type='button' value="No Ball"  />
             <input type='button' value="Out"  onClick={out} />
-            <input type='button' value="Undo"  /> */}
+            <input type='button' value="Undo"  />
       </div>
         }
       </div> 
