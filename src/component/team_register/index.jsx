@@ -1,6 +1,6 @@
 import React , {useState} from "react";
 import genie from "./images/Left_Image.png";
-import styles from "./Login.module.css";
+import styles from "./style.module.css";
 import google from "./images/Google_Logo.png"
 
 const Login = () => {
