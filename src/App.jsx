@@ -1,16 +1,20 @@
 import React from 'react'
-// import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router,Routes, Route, Link, BrowserRouter } from 'react-router-dom';
 import {Header} from "./component/header"
 import {Display} from "./component/display"
 // import {Adder}  from "./component/adder"
-
+import Mark from "./component/mark"
 export const App = () => {
   return (
-    <div>
+    // <BrowserRouter>
+    // <Routes>
+    <>
       <Header />
       <Display />
       {/* <Adder /> */}
-    </div>
+      </>
+      // </Routes>
+      // </BrowserRouter>
   )
 }
 
