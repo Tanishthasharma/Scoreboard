@@ -10,7 +10,6 @@ padding:10px 10px;
 align-item:center;
  justify-content:space-evenly;
 
-<<<<<<< HEAD
 .run{
     background-color:rosybrown;
     height:250px;
@@ -42,7 +41,6 @@ align-item:center;
 // .run input[type='button']:hover{
 //     width:3px;
 //     height:1px;
-=======
 // .run{
 //     background-color:rosybrown;
 //     height:250px;
@@ -52,7 +50,6 @@ align-item:center;
 //     margin-top:100px;
 //     border-radius: 50px;
 //     box-shadow: 5px 5px gray;
->>>>>>> 93d1a59678f43aeb73404392dce95f01a47cc14a
 // }
 
 // .run input[type='button']{

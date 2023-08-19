@@ -3,7 +3,7 @@ import cricket from "./images/cricket.jpeg";
 import styles from "./style.module.css";
 import google from "./images/Google_Logo.png"
 
-export const Register = () => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const handleSubmit = (e) =>{
@@ -41,4 +41,4 @@ export const Register = () => {
   );
 };
 
-export default Register;
+export default Login;
