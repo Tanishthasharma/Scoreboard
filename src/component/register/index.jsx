@@ -6,6 +6,8 @@ import google from "./images/Google_Logo.png"
 export const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name , setName ] = useState("");
+  const [contact , setContact ] = useState("");
   const handleSubmit = (e) =>{
     e.preventDefault();
     console.log("Email:",email);
