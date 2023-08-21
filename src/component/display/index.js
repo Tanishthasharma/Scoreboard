@@ -89,7 +89,8 @@
 
 import React from 'react'
 import { useState } from 'react';
-// import { Adder}   from './component/adder'
+//import { Add }   from './component/adder/index';
+import { Add } from '../adder'; 
 import {Wrapper} from './style'
 import Mark from "../mark/index.js"
 import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
@@ -101,6 +102,10 @@ export const Display = () => {
     // const [past, setPast] = useState([]);
     // const [present, setPresent] = useState(null);
     const[balls, setBalls] = useState(0);
+    const handleButtonClick = (runValue) => {
+      // Call the Add function with the specified run value
+      Add({ run: runValue });
+    };
     // const navigate = useNavigate();
     // const add = (run) =>{
     //   switch (run){
@@ -128,14 +133,14 @@ export const Display = () => {
 // })
 // }
    
-const dispatch = useDispatch
+// const dispatch = useDispatch
 
 
   return (
     // <>
     //   {
-        <BrowserRouter>
-        {
+        // <BrowserRouter>
+        // {
     <Wrapper>
       
         <h1>{score}/{wicket}</h1>
@@ -161,15 +166,15 @@ const dispatch = useDispatch
             {/* <input type='button' value="1"  onClick={() => <Mark score={1}/>}/> */}
             {/* <input type='button' value="1"  onClick={() => navigate("/mark")}/> */}
 
-            <input type='button'   placeholder='1' onClick={add} />
+            <input type='button'    value = "1" placeholder='1' onClick={() => handleButtonClick(1)} />
       </div>
         } 
         
       </div>
  
     </Wrapper>
-      }
-    </BrowserRouter>
+    //   }
+    // </BrowserRouter>
     // }
     // </>
   )
