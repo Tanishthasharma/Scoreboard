@@ -1,16 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import './App.css';
-// import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
 import Header from './component/header'
-// import {Display} from "./component/display"
-// import {Register } from './component/team_register'
-// import { Home } from './component/home'
+import {Register } from './component/register'
+import { Home } from './component/home'
 // import Login from './component/login'
 // import {Adder}  from "./component/adder"
 // import Mark from "./component/mark"
 import Control from './component/control'
 import Display from './component/display'
+import Login from './component/login';
+import Enter from './component/enter' 
 
 export const App = () => {
    const [score,setScore] = useState(0);
@@ -24,44 +25,44 @@ export const App = () => {
      alert(`Inning Done!`)
     },[wickets])
 
-    const timelineRef = useRef()
+    // const timelineRef = useRef()
 
      return (
-    // <div>
+    
     <BrowserRouter>
-      <Header />
-      <main>
-        <div className='inner'>
-        <p>
-         Score:{score}/{wickets}
-        </p>
-        <p>
-          Overs:{`${Math.floor(balls/6)}.${balls%6}`}
-        </p>
-       <div className='timeline' ref={timelineRef}>
-        {
-          timeline.map(item => <div className='timeline-item' >{item} </div>)
-        }
-       </div>
-        </div>
-      </main>
-      {/* <Display /> */}
+    {/* <Header />
+   <Display  score={score}
+            wickets={wickets}
+            timeline={timeline}
+            balls={balls}
+            />
       <Control 
         setScore = {setScore}
         setBalls={setBalls}
         setWicket={setWicket}
         setTimeline={setTimeline}
-      />
-      {/* <Control /> */}
-      {/* <Routes>
+      /> */}
+     
+      <Routes>
         
-        <Route path='/home' element = {<Home />} />
-
+        <Route path='/' element = {<Home />} />
+        <Route path='/header' element ={ <Header />} />
+        
+         <Route path='/display' element={<Display  score={score}  
+         wickets={wickets}
+            timeline={timeline}
+            balls={balls}
+            />} />
+        <Route path='/control' element = {<Control 
+        setScore = {setScore}
+        setBalls={setBalls}
+        setWicket={setWicket}
+        setTimeline={setTimeline}
+      />} />
+       <Route path='/enter' element = {<Enter />} />
         <Route path="/login" element = {<Login/>} />
         <Route path="/register" element = {<Register/>} />
-        <Route path="/display" element = {<Display/>} />
-
-      </Routes> */}
+       </Routes>  
       </BrowserRouter>
      );
 }

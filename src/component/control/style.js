@@ -16,6 +16,7 @@ padding :50px 0px;
 
 
 
+
 input{
     flex:1;
     text-align:center;
