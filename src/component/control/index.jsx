@@ -31,13 +31,15 @@ const Control = ({setScore,setBalls,setWicket,setTimeline}) => {
   return (
     <Wrapper>
     <div className='inner'>
-      <input type="button"  value={9} onClick={updateScore}/>
-      <input type="button" value={9} onClick={updateScore}/>
-      <input type="button" value={9} onClick={updateScore}/>
-      <input type="button" value={"UNDO"} onClick={updateScore}/>
-      <input type="button" value={5} onClick={updateScore}/>
+     
       <input type="button" value={"LegBye"} onClick={updateScore}/>
       <input type="button" value={"Bye"} onClick={updateScore}/>
+      <input type="button" value={"PENALTY"} onClick={updateScore}/>
+      <input type="button" value={"UNDO"} onClick={updateScore}/>
+       <input type="button"  value={9} onClick={updateScore}/>
+      <input type="button" value={9} onClick={updateScore}/>
+      <input type="button" value={5} onClick={updateScore}/>
+      
       <input type="button" value={"NoBall"} onClick={updateScore}/>
       <input type="button" value={3} onClick={updateScore}/>
       <input type="button" value={4} onClick={updateScore}/>

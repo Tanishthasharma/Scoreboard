@@ -12,9 +12,7 @@ const Enter = () => {
     }
   return (
     <Wrapper>
-      <header>
-       <h1>ScoreBoard</h1> 
-      </header>
+      
       <main>
         <input type='button'  value='Register' onClick={register} />
         <input type='button'  value='Login'  onClick={login} />

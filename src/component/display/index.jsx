@@ -1,13 +1,11 @@
 import React, { useRef, useState } from 'react'
 import Wrapper from "./style"
-// import { BrowserRouter } from 'react-router-dom';
-// import Control from  './component/control/index.js'
+
  
 
 export const Display = ({score,wickets,timeline,balls}) => {
-    // const[score,setScore] = useState(0);
-
-    const timelineRef = useRef()
+   
+  const timelineRef = useRef()
   return (
    
     <Wrapper>
