@@ -1,15 +1,10 @@
 import React from 'react'
-import { useState,useEffect } from 'react';
-import { BrowserRouter,Routes, Route, Link } from 'react-router-dom';
-import Header from "./component/header"
-import {Register } from './component/register'
-import { Home } from './component/home'
-import Footer from './component/footer';
-// import {Adder}  from "./component/adder"
-
+import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
 import './App.css';
-
-
+import Header from './component/header'
+import Register  from './component/register'
+import Home  from './component/home'
+import Footer from './component/footer';
 import Control from './component/control'
 import Display from './component/display'
 import Login from './component/login';
@@ -27,22 +22,21 @@ export const App = () => {
      alert(`Inning Done!`)
     },[wickets])
 
-    // const timelineRef = useRef()
-
      return (
-    
+
     <BrowserRouter>
     <Header />
     <Routes>
         
         <Route path='/' element = {<Home />} />
+       
         
-         
          <Route path='/display' element={<Display  score={score}  
          wickets={wickets}
             timeline={timeline}
             balls={balls}
             />} />
+            
         <Route path='/control' element = {<Control 
         setScore = {setScore}
         setBalls={setBalls}

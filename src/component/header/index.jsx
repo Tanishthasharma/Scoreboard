@@ -1,7 +1,7 @@
 import React from 'react'
 import {Wrapper} from './style'
 
-const Header = () => {
+export const Header = () => {
   return (
    
     <Wrapper>
@@ -11,4 +11,4 @@ const Header = () => {
   )
 }
 
-export default Header
+// export default Header

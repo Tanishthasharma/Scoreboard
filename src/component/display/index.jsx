@@ -4,7 +4,7 @@ import Wrapper from "./style"
 // import Control from  './component/control/index.js'
  
 
-const Display = ({score,wickets,timeline,balls}) => {
+export const Display = ({score,wickets,timeline,balls}) => {
     // const[score,setScore] = useState(0);
 
     const timelineRef = useRef()
