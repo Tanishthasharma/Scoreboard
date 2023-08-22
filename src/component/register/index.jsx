@@ -31,7 +31,7 @@ export const Register = () => {
       <form action=""  className="form">
         <input type="name" placeholder="Enter Name"  className = ""  /> 
         <input type="contact" placeholder="Enter Contact" />
-        <input type="password" placeholder = "Password"  className = "password"onChange={(e)=> setPassword(e.target.value)} />
+        <input type="password" placeholder = "Password"  className = "password" onChange={(e)=> setPassword(e.target.value)} />
         {/* <div className={styles.innerForm}>
           <label htmlFor="" className={styles.rememberme}><input type="checkbox" />Remember Me</label>
           <label htmlFor="" className={styles.forgotpass}><a href="">Forgot Password</a></label>

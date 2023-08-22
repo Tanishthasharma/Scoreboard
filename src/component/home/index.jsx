@@ -11,15 +11,16 @@ export const Home = () => {
 
   return (
     <Wrapper>
-      <header>
+      {/* <header>
        <h1>SCOREZZ</h1> 
-      </header>
+      </header> */}
       <main>
         <input type='button' value='PLAY'  onClick={play}/>
       </main>
-      <footer>
+      {/* <footer>
        <p> &copy;Copyright 2023 alrights reserved to SCOREZZ</p>
-      </footer>
+      </footer> */}
+
       </Wrapper>
   )
 }

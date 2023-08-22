@@ -5,7 +5,7 @@ export const Header = () => {
   return (
    
     <Wrapper>
-      <h1>ScoreBoard</h1>
+      <h1>Scorezz</h1>
     </Wrapper>
    
   )
