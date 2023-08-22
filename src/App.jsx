@@ -1,5 +1,5 @@
-import React from 'react'
-import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
+import {React , useState , useEffect} from 'react'
+import { BrowserRouter , Router,Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import Header from './component/header'
 import Register  from './component/register'
@@ -31,11 +31,14 @@ export const App = () => {
         <Route path='/' element = {<Home />} />
        
         
-         <Route path='/display' element={<Display  score={score}  
+        <Route path='/display' element={<><Display  score={score}  
          wickets={wickets}
             timeline={timeline}
             balls={balls}
-            />} />
+            /><Control setScore = {setScore}
+            setBalls={setBalls}
+            setWicket={setWicket}
+            setTimeline={setTimeline}/></>} />
             
         <Route path='/control' element = {<Control 
         setScore = {setScore}
