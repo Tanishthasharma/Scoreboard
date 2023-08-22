@@ -3,12 +3,7 @@ import { styled } from "styled-components";
 
 const Wrapper = styled.section
 `
-header{
-  text-align:center;
-  h1{
-    font-size:56px;
-  }
-}
+  
 
 main{
    
@@ -22,14 +17,7 @@ main{
    }
 }
 
-footer{
-  background-color:black;
-  color:white;
-  text-align:center;
- postion:absolute;
-  bottom:0;
-  
-}
+
 `
 
-export default Wrapper
+export default Wrapper 

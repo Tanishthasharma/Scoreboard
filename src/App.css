@@ -8,13 +8,14 @@
 body{
    background-color: #f2f2f2;
      font-size: 16px;
+
 }
 
-/* #root{
+#root{
     height: 100vh;
     display: flex;
     flex-direction: column;
-} */
+}
 
 h1{
     font-size: 1.2rem;
