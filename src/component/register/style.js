@@ -1,17 +1,31 @@
 import { styled } from "styled-components";
 
 
-const Wrapper = styled.section`
-  background-color:blue;
+export const Wrapper = styled.section`
+   background-color:blue;
+max-width :50%;
+margin  auto ;
+padding : 50px; 
 
   .inner{
-    max-width : 50%;
-    diplay : flex;
+     background-color : yellow;
+     max widht:90%;
+         diplay : flex;
   }
-  .loginForm . form {
+  .registerForm  {
+    background-color : pink;
     display: flex;
      flex-direction: row-reverse;
+     align-items: center;
+     padding : 20px;
+  }
+
+  .form{
+    background-color : orange;
+    padding : 20px 20px 20px 20px;
+    display : flex;
+    flex-direction : column;
   }
 `
 
-export default Wrapper
+ export default Wrapper

@@ -21,7 +21,8 @@ export const Register = () => {
     navigate('/login')
   }
   return (
-    <div 
+   <Wrapper>
+     <div 
         // onSubmit={handleSubmit}
         >
       <div className="inner">
@@ -49,6 +50,7 @@ export const Register = () => {
       </div>
       </div>
     </div>
+   </Wrapper>
   );
 };
 

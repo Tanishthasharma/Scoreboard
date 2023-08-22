@@ -14,7 +14,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const handleSubmit = (e) =>{
     e.preventDefault();
-    console.log("ontact:",contact);
+    console.log("contact:",contact);
     console.log("Password", password);
   };
   const submit = () =>{
@@ -39,7 +39,7 @@ const Login = () => {
           <label htmlFor="" className={styles.forgotpass}><a href="">Forgot Password</a></label>
         </div> */}
         <input type="submit" className="" id="userSubmitButton"  onClick={submit}></input>
-        <label htmlFor="">Don't have an Account ? <a href={register}>Register Here</a></label>
+        <label htmlFor="">Don't have an Account ? <a href="./register">Register Here</a></label>
           
           
         {/* <div >
