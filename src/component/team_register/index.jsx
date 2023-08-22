@@ -4,23 +4,24 @@ import styles from "./style.module.css";
 import google from "./images/Google_Logo.png"
 
 export const Register = () => {
-  const [email, setEmail] = useState("");
+  // const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name , setName ] = useState("");
   const [contact , setContact ] = useState("");
-  const handleSubmit = (e) =>{
+  const register = (e) =>{
     e.preventDefault();
-    console.log("Email:",email);
+    // console.log("Email:",email);
     console.log("Password", password);
   };
   return (
     <div 
-        onSubmit={handleSubmit}>
+        // onSubmit={handleSubmit}
+        >
       <div className={styles.inner}>
       <img src={cricket} alt="" height={"90%"} width={"50%"}/>
       <div className={styles.loginForm}>
       <form action=""  className={styles.form}>
-        <input type="email" placeholder="Email"  className = {styles.email} onChange={(e)=> setEmail(e.target.value)} /> 
+        <input type="email" placeholder="Email"  className = {styles.email}  /> 
         <input type="password" placeholder = "Password"  className = {styles.password} onChange={(e)=> setPassword(e.target.value)} />
         <div className={styles.innerForm}>
           <label htmlFor="" className={styles.rememberme}><input type="checkbox" />Remember Me</label>
