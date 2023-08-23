@@ -15,7 +15,7 @@ export const Display = ({score,wickets,timeline,balls}) => {
         <h1>Team 1</h1>
         </div>
         <div className='inner'>
-          
+          {/* <input type="number" placeholder='Enter Overs' value={Overs} /> */}
           <p>
             Score : {score}/{wickets}
           </p>

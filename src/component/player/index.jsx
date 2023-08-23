@@ -17,7 +17,7 @@ const Player = () => {
            
              <div>
                  <label >Team name:</label>
-                 <input type='text' placeholder='enter team name' />
+                 <input type='text' placeholder='enter team name'  />
             </div>
             <div>
                  <label >Captain name:</label>

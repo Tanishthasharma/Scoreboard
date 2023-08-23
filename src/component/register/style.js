@@ -1,31 +1,72 @@
 import { styled } from "styled-components";
 
 
-export const Wrapper = styled.section`
-   background-color:blue;
-max-width :50%;
-margin  auto ;
-padding : 50px; 
-
+const Wrapper = styled.section`
+  background-color:lightblue;
+  
   .inner{
-     background-color : yellow;
-     max widht:90%;
-         diplay : flex;
-  }
-  .registerForm  {
-    background-color : pink;
-    display: flex;
-     flex-direction: row-reverse;
-     align-items: center;
-     padding : 20px;
-  }
-
-  .form{
-    background-color : orange;
-    padding : 20px 20px 20px 20px;
+    max-width : 50%;
+    margin: 30px auto;
     display : flex;
-    flex-direction : column;
+    justify-content:center;
+    align-items: center;
+    
+    
+
+    .registerForm{
+      width:70%;
+      margin: 30px auto; 
+      background-color:#f8f8f8;
+      border-radius:8px;
+      
+      h2{
+        text-align:center;
+        margin-bottom:20px;
+        margin-top:20px;
+      }
+      form{
+        width:70%;
+        margin:  0 auto;
+        display:flex;
+        flex-direction : column;
+        
+        input{
+          width:60%;
+          margin: 15px auto;
+          text-align: center;
+          border-radius:4px;
+          border:none;
+          padding:5px;
+          background-color: #e8e8e8;
+          
+        }
+
+        input[type=button]{
+          width:60%;
+          margin: 15px auto;
+          text-align: center;
+          background-color: royalblue;
+          padding: 3px;
+          color:white;
+          border:none;
+          border-radius:4px;
+          cursor:pointer;
+        }
+      }
+
+      p{
+        text-align:center;
+      }
+      span{
+        display:flex;
+        justify-content:center;
+        color:blue;
+        margin-bottom:20px;
+        cursor:pointer;
+      }
+    }
   }
+  
 `
 
- export default Wrapper
+export default Wrapper

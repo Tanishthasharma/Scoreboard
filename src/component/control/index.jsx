@@ -1,10 +1,27 @@
 import React from 'react'
 import Wrapper from "./style"
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css'
 
 const Control = ({setScore,setBalls,setWicket,setTimeline}) => {
 
+  const updateBalls = (e) => {
+    <Popup trigger=
+    {<button> Click to open popup </button>}
+    position="right center">
+    <div>GeeksforGeeks</div>
+</Popup>
+
+  }
+
   const updateScore = (e) =>{
     const value = e.target.value 
+    if(value === "LegBye"){
+      setTimeline(timeline => [...timeline, value])
+    } 
+    if(value === "Bye"){
+      setTimeline(timeline => [...timeline, value])
+    }
     switch(value){
       case "0":
         setBalls(balls =>balls + 1)
@@ -20,6 +37,10 @@ const Control = ({setScore,setBalls,setWicket,setTimeline}) => {
        setBalls(balls =>balls + 1)
       setTimeline(timeline => [...timeline,value])
        break;
+       case "Wide":
+         setScore(score => score + 1)
+         setTimeline(timeline => [...timeline, value])
+        break;
        case "OUT" :
         setBalls(balls =>balls + 1)
         setWicket(wickets => wickets + 1)
@@ -36,7 +57,7 @@ const Control = ({setScore,setBalls,setWicket,setTimeline}) => {
       <input type="button" value={"Bye"} onClick={updateScore}/>
       <input type="button" value={"PENALTY"} onClick={updateScore}/>
       <input type="button" value={"UNDO"} onClick={updateScore}/>
-       <input type="button"  value={9} onClick={updateScore}/>
+       <input type="button"  value={"Set Overs"} onClick={updateBalls}/>
       <input type="button" value={9} onClick={updateScore}/>
       <input type="button" value={5} onClick={updateScore}/>
       
@@ -53,5 +74,6 @@ const Control = ({setScore,setBalls,setWicket,setTimeline}) => {
     </Wrapper>
   )
 }
+
 
 export default Control

@@ -1,6 +1,5 @@
 import React , {useState} from "react";
-import cricket from "./images/cricket.jpeg";
-import google from "./images/Google_Logo.png"
+
 import Register from "../register";
 import Wrapper from "./style";
 import { useNavigate } from "react-router-dom";
@@ -27,23 +26,24 @@ const Login = () => {
   }
 
   return (
-    <Wrapper>
-      <div 
-        onSubmit={handleSubmit}>
-      <div className="inner">
-     
-      <div className="loginForm">
-      <form action=""  className="form">
-        <input type="contact" placeholder="Contact"  className = "email" onChange={(e)=> setContact(e.target.value)} /> 
-        <input type="password" placeholder = "Password"  className = "password" onChange={(e)=> setPassword(e.target.value)} />
-        <input type="submit"  id="userSubmitButton"  onClick={submit} />
-        <label htmlFor="">Don't have an Account ? <a href={register}>Register Here</a></label>
-          </form>
-       </div>
+  <Wrapper>
+    <section>
+      <div onSubmit={handleSubmit}>
+        <div className="inner">
+          <div className="loginForm">
+          <h2>Login</h2>
+            <form action=""  className="form">
+              <input type="contact" placeholder="Contact"  className = "email" onChange={(e)=> setContact(e.target.value)} /> 
+              <input type="password" placeholder = "Password"  className = "password" onChange={(e)=> setPassword(e.target.value)} />
+              <input type="button" value="Login"  id="userSubmitButton"  onClick={submit} />
+              <label htmlFor="">Don't have an Account ? <a href={register}>Register Here</a></label>
+            </form>
+        </div>
+        </div>
       </div>
-    </div>
-    </Wrapper>
+    </section>
+</Wrapper>
   );
 };
 
-export default Login;
+export default Login;
