@@ -1,7 +1,8 @@
 import React from 'react'
 import Wrapper from "./style"
 
-const Control = ({setScore,setBalls,setWicket,setTimeline}) => {
+const Control = ({setScore,setBalls,setWicket,setTimeline,setIsPopupOpen,setInputValue}) => {
+ 
 
   const updateScore = (e) =>{
     const value = e.target.value 
@@ -10,7 +11,7 @@ const Control = ({setScore,setBalls,setWicket,setTimeline}) => {
         setBalls(balls =>balls + 1)
          setTimeline(timeline => [...timeline,value])
         break;
-      case "1":
+      case "1": 
       case "2":
       case "3":
       case "4":
@@ -25,6 +26,11 @@ const Control = ({setScore,setBalls,setWicket,setTimeline}) => {
         setWicket(wickets => wickets + 1)
         setTimeline(timeline => [...timeline,value])
         break;
+     case "Wide" :
+      
+       
+        
+     
     }
   }
 
@@ -49,6 +55,7 @@ const Control = ({setScore,setBalls,setWicket,setTimeline}) => {
       <input type="button" value={1} onClick={updateScore}/>
       <input type="button" value={2} onClick={updateScore}/>
       <input type="button" value={"OUT"} onClick={updateScore}/>
+      
     </div>
     </Wrapper>
   )

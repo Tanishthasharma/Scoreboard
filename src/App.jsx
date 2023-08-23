@@ -11,13 +11,15 @@ import Login from './component/login';
 import Enter from './component/enter' 
 import Player from './component/player'
 import { useEffect, useState } from 'react';
+import Widepop from './component/widepop'
 
 export const App = () => {
    const [score,setScore] = useState(0);
    const [balls,setBalls] = useState(0);
    const [wickets,setWicket] = useState(0);
    const [timeline,setTimeline] = useState([]);
-   
+   const[isPopupOpen , setIsPopupOpen] = useState(false) ;
+   const[inputValue , setInputValue] = useState('');
 
    useEffect(() =>{
     if(wickets === 10)
@@ -27,6 +29,13 @@ export const App = () => {
       setBalls(balls => 0 )
     }
     },[wickets])
+     
+   
+     
+    
+       
+    
+
 
      return (
 
@@ -44,7 +53,11 @@ export const App = () => {
             /><Control setScore = {setScore}
             setBalls={setBalls}
             setWicket={setWicket}
-            setTimeline={setTimeline}/></>} />
+            setTimeline={setTimeline}
+            setIsPopupOpen={setIsPopupOpen}
+            setInputValue={setInputValue}
+            /></>} />
+
             
         <Route path='/control' element = {<Control 
         setScore = {setScore}
@@ -52,12 +65,12 @@ export const App = () => {
         setWicket={setWicket}
         setTimeline={setTimeline}
       />} />
-      
+            
        <Route path='/enter' element = {<Enter />} />
         <Route path="/login" element = {<Login/>} />
         <Route path="/register" element = {<Register/>} />
         <Route path='/player'  element = { <Player />} />
-
+         
        </Routes>  
         <Footer/>
       </BrowserRouter>
