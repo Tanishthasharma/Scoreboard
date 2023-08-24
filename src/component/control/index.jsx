@@ -1,28 +1,48 @@
-import React from 'react'
+import React, { useState ,useEffect,useRef } from 'react'
 import Wrapper from "./style"
-// import Popup from 'reactjs-popup';
-// import 'reactjs-popup/dist/index.css'
 
 
-const Control = ({setScore,setBalls,setWicket,setTimeline,openPopupCallback}) => {
+
+const Control = ({setScore,setBalls,setWicket,setTimeline,openPopupCallback,history,saveStateToHistory,currentIndex,setCurrentIndex, score,
+  balls,
+  wickets,
+  timeline,}) => {
+ 
+    const prevHistoryIndexRef = useRef(currentIndex);
+
+  useEffect(() => {
+    prevHistoryIndexRef.current = currentIndex;
+  }, [currentIndex]);
+
+  const handleUndo = () => {
+    if (currentIndex >= 0 ) {
+      
+      const prevState = history[prevHistoryIndexRef.current];
+      if (prevState) {
+        setScore(prevState.score);
+        setBalls(prevState.balls);
+        setWicket(prevState.wickets);
+        setTimeline([...prevState.timeline]);
+        setCurrentIndex(currentIndex - 1);
+      }
+    }
+  };
+
  
   
-
-//   const updateBalls = (e) => {
-//     <Popup trigger=
-//     {<button> Click to open popup </button>}
-//     position="right center" >
-//     <div>GeeksforGeeks</div>
-// </Popup>
-
-  // }
+  
 
   const updateScore = (e) =>{
     const value = e.target.value 
+    
+    
+
     switch(value){
       case "0":
-        setBalls(balls =>balls + 1)
+       
+          setBalls(balls =>balls + 1)
          setTimeline(timeline => [...timeline,value])
+        
         break;
       case "1": 
       case "2":
@@ -30,28 +50,55 @@ const Control = ({setScore,setBalls,setWicket,setTimeline,openPopupCallback}) =>
       case "4":
       case "5":
       case "6": 
-       setScore(score => score + parseInt(value))
-       setBalls(balls =>balls + 1)
-      setTimeline(timeline => [...timeline,value])
-       break;
-       case "Wide":
-         setScore(score => score + 1)
-         setTimeline(timeline => [...timeline, value])
-        break;
-       case "OUT" :
+       
+        setScore(score => score + parseInt(value))
         setBalls(balls =>balls + 1)
-        setWicket(wickets => wickets + 1)
-        setTimeline(timeline => [...timeline,value])
-        break;
-     case "NoBall" :
-      openPopupCallback() ;
-      setTimeline(timeline => [...timeline, value])
-        break;
-       case  "LB+/B+" :
-        setTimeline(timeline => [...timeline, value])
+       setTimeline(timeline => [...timeline,value])
       
      
+     
+       break;
+       case "Wide":
+       
+          setScore(score => score + 1)
+          setTimeline(timeline => [...timeline, value])
+        
+        break;
+       case "OUT" :
+       
+          setBalls(balls =>balls + 1)
+        setWicket(wickets => wickets + 1)
+        setTimeline(timeline => [...timeline,value])
+      
+        break;
+     case "NoBall" :
+     
+        openPopupCallback() ;
+      setScore(score => score + 1)
+      setTimeline(timeline => [...timeline, value])
+     
+        break;
+       case  "LB+/B+" :
+        
+          setTimeline(timeline => [...timeline, value])
+         break;
+        case "Undo":
+          
+     handleUndo();
+          break;
+        default:
+          break; 
+
+          case "PENALTY" :
+            openPopupCallback() ;
+            break;
     }
+    
+    
+    if (value !== "Undo") {
+      saveStateToHistory();
+    }
+
   }
 
   return (
@@ -59,16 +106,16 @@ const Control = ({setScore,setBalls,setWicket,setTimeline,openPopupCallback}) =>
     <div className='inner'>
      
       <input type="button" value={5} onClick={updateScore}/>
-      {/* <input type="button" value={"Bye"} onClick={updateScore}/> */}
+      
       <input type="button" value={"PENALTY"} onClick={updateScore}/>
-      <input type="button" value={"UNDO"} onClick={updateScore}/>
-       {/* <input type="button"  value={"Set Overs"} onClick={updateBalls}/> */}
-      <input type="button" value={"Wide"} onClick={updateScore}/>
+      <input type="button" value={"Undo"} onClick={updateScore} disabled={timeline.length < 1}/>
+       
+      <input type="button" value={5} onClick={updateScore}/>
       <input type="button" value={3} onClick={updateScore}/>
       
       <input type="button" value={2} onClick={updateScore}/>
       <input type="button" value={4} onClick={updateScore}/>
-      <input type="button" value={5} onClick={updateScore}/>
+      <input type="button" value={"Wide"} onClick={updateScore}/>
       <input type="button" value={0} onClick={updateScore}/>
       <input type="button" value={1} onClick={updateScore}/>
       <input type="button" value={6} onClick={updateScore}/>
