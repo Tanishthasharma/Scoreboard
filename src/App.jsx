@@ -11,14 +11,17 @@ import Login from './component/login';
 import Enter from './component/enter' 
 import Player from './component/player'
 import { useEffect, useState } from 'react';
+import Widepop from './component/widepop'
 
 export const App = () => {
    const [score,setScore] = useState(0);
    const [balls,setBalls] = useState(0);
    const [wickets,setWicket] = useState(0);
    const [timeline,setTimeline] = useState([]);
+   const [isPopupOpen, setIsPopupOpen] = useState(false);
+    
    
-
+   
    useEffect(() =>{
     if(wickets === 10)
      {alert(`Inning Done!`)
@@ -27,6 +30,19 @@ export const App = () => {
       setBalls(balls => 0 )
     }
     },[wickets])
+
+    
+     
+  
+    const openPopup = () => {
+      setIsPopupOpen(true);
+    };
+  
+    const closePopup = () => {
+      setIsPopupOpen(false);
+    };
+    
+
 
      return (
 
@@ -41,28 +57,34 @@ export const App = () => {
          wickets={wickets}
             timeline={timeline}
             balls={balls}
-            /><Control setScore = {setScore}
+            /><div><Control setScore = {setScore}
             setBalls={setBalls}
             setWicket={setWicket}
-            setTimeline={setTimeline}/></>} />
+            setTimeline={setTimeline}
+            openPopupCallback={openPopup} 
+            />
+            {isPopupOpen && (
+              <Widepop handleClose={closePopup} setScore={setScore}>
+               
+              </Widepop>
+            )}</div></>} />
+
             
-        <Route path='/control' element = {<Control 
-        setScore = {setScore}
-        setBalls={setBalls}
-        setWicket={setWicket}
-        setTimeline={setTimeline}
-      />} />
-      
+        
+            
        <Route path='/enter' element = {<Enter />} />
         <Route path="/login" element = {<Login/>} />
         <Route path="/register" element = {<Register/>} />
         <Route path='/player'  element = { <Player />} />
-
+        
+         
        </Routes>  
+       
+       
         <Footer/>
       </BrowserRouter>
      );
-}
+}  
 
 export default App
 
