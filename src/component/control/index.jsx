@@ -1,51 +1,74 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Wrapper from "./style"
-import Popup from 'reactjs-popup';
-import 'reactjs-popup/dist/index.css'
 
 const Control = ({setScore,setBalls,setWicket,setTimeline}) => {
-
-  const updateBalls = (e) => {
-    <Popup trigger=
-    {<button> Click to open popup </button>}
-    position="right center">
-    <div>GeeksforGeeks</div>
-</Popup>
-
-  }
-
+  const [tl,setTl] = useState([])
   const updateScore = (e) =>{
     const value = e.target.value 
-    if(value === "LegBye"){
-      setTimeline(timeline => [...timeline, value])
-    } 
-    if(value === "Bye"){
-      setTimeline(timeline => [...timeline, value])
-    }
+   
     switch(value){
       case "0":
         setBalls(balls =>balls + 1)
-         setTimeline(timeline => [...timeline,value])
+        setTimeline(timeline => [...timeline,value])
         break;
+
       case "1":
       case "2":
       case "3":
       case "4":
       case "5":
       case "6": 
-       setScore(score => score + parseInt(value))
-       setBalls(balls =>balls + 1)
-      setTimeline(timeline => [...timeline,value])
-       break;
-       case "Wide":
-         setScore(score => score + 1)
-         setTimeline(timeline => [...timeline, value])
+        setScore(score => score + parseInt(value))
+        setBalls(balls =>balls + 1)
+        setTimeline(timeline => [...timeline,value])
+        setTl(tl => [...tl,parseInt(value)])
+        console.log(tl)
         break;
-       case "OUT" :
+
+      case "OUT" :
         setBalls(balls =>balls + 1)
         setWicket(wickets => wickets + 1)
         setTimeline(timeline => [...timeline,value])
         break;
+
+      case "LegBye":
+        setBalls(balls => balls + 1)
+        setTimeline(timeline => [...timeline,"LB"])
+        break;
+      
+      case "Bye":
+        setBalls(balls => balls + 1)
+        setTimeline(timeline => [...timeline,"B"])
+        break;
+      
+      case "Penalty":
+        setScore(score => score + 5)
+        setBalls(balls => balls + 1)
+        setTimeline(timeline => [...timeline,"P"])
+        break;
+
+      case "NoBall":
+        setScore(score => score + 1)
+        setTimeline(timeline => [...timeline,"NB"])
+        break;
+      
+      case "Wide":
+        setScore(score => score + 1)
+        setTimeline(timeline => [...timeline,"WD"])
+        break;
+        
+      case "Undo":
+        if(tl[tl.length - 1] === 4){
+          setScore(score => score -  4)
+          
+          // setTimeline(timeline => [...timeline,...timeline.map(timeline.pop())])
+          setBalls(balls => balls - 1)
+          tl.pop()
+          // console.log(timeline.map)
+        }
+        break;
+
+      default: break;
     }
   }
 
@@ -55,9 +78,9 @@ const Control = ({setScore,setBalls,setWicket,setTimeline}) => {
      
       <input type="button" value={"LegBye"} onClick={updateScore}/>
       <input type="button" value={"Bye"} onClick={updateScore}/>
-      <input type="button" value={"PENALTY"} onClick={updateScore}/>
-      <input type="button" value={"UNDO"} onClick={updateScore}/>
-       <input type="button"  value={"Set Overs"} onClick={updateBalls}/>
+      <input type="button" value={"Penalty"} onClick={updateScore}/>
+      <input type="button" value={"Undo"} onClick={updateScore}/>
+       <input type="button"  value={9} onClick={updateScore}/>
       <input type="button" value={9} onClick={updateScore}/>
       <input type="button" value={5} onClick={updateScore}/>
       
@@ -74,6 +97,5 @@ const Control = ({setScore,setBalls,setWicket,setTimeline}) => {
     </Wrapper>
   )
 }
-
 
 export default Control

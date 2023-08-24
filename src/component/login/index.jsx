@@ -36,7 +36,7 @@ const Login = () => {
               <input type="contact" placeholder="Contact"  className = "email" onChange={(e)=> setContact(e.target.value)} /> 
               <input type="password" placeholder = "Password"  className = "password" onChange={(e)=> setPassword(e.target.value)} />
               <input type="button" value="Login"  id="userSubmitButton"  onClick={submit} />
-              <label htmlFor="">Don't have an Account ? <a href={register}>Register Here</a></label>
+              <label htmlFor="">Don't have an Account ? <a href="./register">Register Here</a></label>
             </form>
         </div>
         </div>
