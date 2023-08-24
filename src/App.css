@@ -40,12 +40,12 @@ main .timeline{
   
   main .timeline .timeline-item{
     min-width : 32px;
-    height: 32px;
+    height: 42px;
     text-align: center;
-    line-height: 32px;
-    border-radius: 16px;
-    background : maroon;
-    color : #fff;
+    line-height: 42px;
+    border-radius: 20px;
+    background : lightblue;
+    color : #000;
     margin : 10px;
     font-size: 1rem;
   }

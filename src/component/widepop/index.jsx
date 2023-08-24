@@ -1,23 +1,59 @@
 import React from 'react'
 import Wrapper from "./style"
+import { useEffect } from 'react';
 
-const Widepop = ({inputValue ,onClose, onInputChange}) => {
-  return (
+const Widepop = ({children, handleClose,setScore}) => {
+
+  useEffect(() => {
+    
+    const handleOutsideClick = (e) => {
+      if (e.target === e.currentTarget) {
+        handleClose();
+      }
+      
+    };
+    
+    window.addEventListener('mousedown', handleOutsideClick);
+    return () => {
+      window.removeEventListener('mousedown', handleOutsideClick);
+    };
+  }, [handleClose]);
+
+   const updateScore =(e) =>{
+       const value = e.target.value
+       switch(value){
+        case "0":
+      case "1":
+      case "2":
+      case "3":
+      case "4":
+      case "5":
+        case "6":
+          setScore(score => score + parseInt(value))
+          // onClick(() =>{handleClose})
+          handleClose();
+          
+       }
+   }
+
+  return  (
     <Wrapper>
-    <div classname="popup">
-      <div className='popup-content'>
-        <p>Enter score</p>
-        <input
-          type="text"
-          value={inputValue}
-          onChange={(e) =>onInputChange(e.target.value)}
-          placeholder="Type here..."
-        />
-        <button onClick={onClose}>Set</button>
+        <div className="popup">
+      <div className="popup-inner">
+        <input type='button' value={3} onClick={updateScore}/>
+        <input type='button' value={5} onClick={updateScore}/>
+        <input type='button' value={2} onClick={updateScore}/>
+        <input type='button' value={6} onClick={updateScore}/>
+        <input type='button' value={4} onClick={updateScore}/>
+        <input type='button' value={1} onClick={updateScore}/>
+        <input type='button' value={0} onClick={updateScore}/>
+        {children}
       </div>
     </div>
+
     </Wrapper>
-  )
+    )
+  
 }
 
-export default Widepop
+export default Widepop 

@@ -7,12 +7,14 @@ const Wrapper = styled.section
     display:flex;
     justify-content:space-evenly;
     margin-top:50px;
+    flex-direction:column;
+    text-align:center;
 }
-form
-{
- dispaly:flex;
- flex-direction:column;
-}
+// form
+// {
+//  dispaly:flex;
+//  flex-direction:column;
+// }
 
 .lets{
      color:black;

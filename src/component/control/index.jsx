@@ -1,28 +1,24 @@
 import React from 'react'
 import Wrapper from "./style"
-import Popup from 'reactjs-popup';
-import 'reactjs-popup/dist/index.css'
+// import Popup from 'reactjs-popup';
+// import 'reactjs-popup/dist/index.css'
 
-const Control = ({setScore,setBalls,setWicket,setTimeline,setIsPopupOpen,setInputValue}) => {
+
+const Control = ({setScore,setBalls,setWicket,setTimeline,openPopupCallback}) => {
  
+  
 
-  const updateBalls = (e) => {
-    <Popup trigger=
-    {<button> Click to open popup </button>}
-    position="right center">
-    <div>GeeksforGeeks</div>
-</Popup>
+//   const updateBalls = (e) => {
+//     <Popup trigger=
+//     {<button> Click to open popup </button>}
+//     position="right center" >
+//     <div>GeeksforGeeks</div>
+// </Popup>
 
-  }
+  // }
 
   const updateScore = (e) =>{
     const value = e.target.value 
-    if(value === "LegBye"){
-      setTimeline(timeline => [...timeline, value])
-    } 
-    if(value === "Bye"){
-      setTimeline(timeline => [...timeline, value])
-    }
     switch(value){
       case "0":
         setBalls(balls =>balls + 1)
@@ -47,10 +43,13 @@ const Control = ({setScore,setBalls,setWicket,setTimeline,setIsPopupOpen,setInpu
         setWicket(wickets => wickets + 1)
         setTimeline(timeline => [...timeline,value])
         break;
-     case "Wide" :
+     case "NoBall" :
+      openPopupCallback() ;
+      setTimeline(timeline => [...timeline, value])
+        break;
+       case  "LB+/B+" :
+        setTimeline(timeline => [...timeline, value])
       
-       
-        
      
     }
   }
@@ -59,24 +58,24 @@ const Control = ({setScore,setBalls,setWicket,setTimeline,setIsPopupOpen,setInpu
     <Wrapper>
     <div className='inner'>
      
-      <input type="button" value={"LegBye"} onClick={updateScore}/>
-      <input type="button" value={"Bye"} onClick={updateScore}/>
+      <input type="button" value={5} onClick={updateScore}/>
+      {/* <input type="button" value={"Bye"} onClick={updateScore}/> */}
       <input type="button" value={"PENALTY"} onClick={updateScore}/>
       <input type="button" value={"UNDO"} onClick={updateScore}/>
-       <input type="button"  value={"Set Overs"} onClick={updateBalls}/>
-      <input type="button" value={9} onClick={updateScore}/>
-      <input type="button" value={5} onClick={updateScore}/>
-      
-      <input type="button" value={"NoBall"} onClick={updateScore}/>
-      <input type="button" value={3} onClick={updateScore}/>
-      <input type="button" value={4} onClick={updateScore}/>
-      <input type="button" value={6} onClick={updateScore}/>
+       {/* <input type="button"  value={"Set Overs"} onClick={updateBalls}/> */}
       <input type="button" value={"Wide"} onClick={updateScore}/>
+      <input type="button" value={3} onClick={updateScore}/>
+      
+      <input type="button" value={2} onClick={updateScore}/>
+      <input type="button" value={4} onClick={updateScore}/>
+      <input type="button" value={5} onClick={updateScore}/>
       <input type="button" value={0} onClick={updateScore}/>
       <input type="button" value={1} onClick={updateScore}/>
-      <input type="button" value={2} onClick={updateScore}/>
+      <input type="button" value={6} onClick={updateScore}/>
+      <input type="button" value={"LB+/B+"} onClick={updateScore}/>
+      <input type="button" value={"NoBall"} onClick={updateScore}/>
       <input type="button" value={"OUT"} onClick={updateScore}/>
-      
+     
     </div>
     </Wrapper>
   )
