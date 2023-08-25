@@ -16,7 +16,7 @@ const Player = ({overs,setOvers,setTeam1Name,team1Name,team2Name,setTeam2Name}) 
   return (
     <Wrapper>
     <div className='Team'>
-        
+        <h2>Match</h2>
         <form>
         <div>
                <label>Overs:</label>
@@ -33,9 +33,7 @@ const Player = ({overs,setOvers,setTeam1Name,team1Name,team2Name,setTeam2Name}) 
                  <label >Team 1:</label>
                  <input type='text'  placeholder='enter team name' value={team1Name} onChange={(e) => setTeam1Name(e.target.value)} />
             </div>
-           </form>
-        
-      <form>
+           
           
             
             <div>
@@ -43,17 +41,11 @@ const Player = ({overs,setOvers,setTeam1Name,team1Name,team2Name,setTeam2Name}) 
                  <input type='text'  placeholder='enter team name' value={team2Name} onChange={(e) => setTeam2Name(e.target.value)}/>
             </div>
             
-           
-            
-          </form>
-       
-    </div>
-   
-
-    <div className='lets'>
+           <div className='lets'>
     <input type='button' value={"Lets Play"}  onClick={start}  disabled={!(team1Name,team2Name)}/>
     </div>
-
+    </form>
+    </div>
     </Wrapper>
   )
 }

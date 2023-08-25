@@ -12,7 +12,9 @@ export const Home = () => {
   return (
     <Wrapper>
       <main>
+        
         <input type='button' value='PLAY'  onClick={play}/>
+        
       </main>
       </Wrapper>
   )

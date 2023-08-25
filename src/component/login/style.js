@@ -3,21 +3,27 @@ import { styled } from "styled-components";
 
 export const Wrapper = styled.section`
 background-color:lightblue;
-  
+
+height:60%;
+margin:30px 15px ;
+max-height:600px;
+
 .inner{
-  max-width : 50%;
+  width :70%;
+  max-width : 400px;
   margin: 30px auto;
   display : flex;
   justify-content:center;
   align-items: center;
   
-  
 
   .loginForm{
-    width:70%;
+    width:80%;
+    max-width:390px;
     margin: 30px auto; 
     background-color:#f8f8f8;
     border-radius:8px;
+    padding:5px;
     
     h2{
       text-align:center;
@@ -25,13 +31,13 @@ background-color:lightblue;
       margin-top:20px;
     }
     form{
-      width:70%;
+      width:80%;
       margin:  0 auto;
       display:flex;
       flex-direction : column;
       
       input{
-        width:60%;
+        width:90%;
         margin: 15px auto;
         text-align: center;
         border-radius:4px;
