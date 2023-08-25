@@ -2,7 +2,7 @@ import React from 'react'
 import Wrapper from './style'
 import { useNavigate } from 'react-router-dom'
 
-const Player = ({setBalls , setOvers}) => {
+const Player = ({overs,setOvers,setTeam1Name,team1Name,team2Name,setTeam2Name}) => {
 
     const navigate = useNavigate();
     const start = () =>{
@@ -10,158 +10,43 @@ const Player = ({setBalls , setOvers}) => {
          
 
     }
-    const totalOvers = (e) =>{
-     const value = e.target.value;
-     switch(value) {
-          case "5.0":
-          case "10.0":
-          case "15.0":
-          case "20.0":          
-     
-     //  setBalls(balls => value * 6)
-      setOvers(overs => value)
-    }
-}
+
+    
    
   return (
     <Wrapper>
     <div className='Team'>
-        <div className='Team1'>
+        
         <form>
         <div>
                <label>Overs:</label>
-              <select name='overs' id='overs'>
+              <select name='overs' id='overs'  value={overs} onChange={(e) => setOvers(e.target.value)}>
               <option disabled selected>...select overs..</option>
-               <option value="5.0" onSelect={totalOvers}>5 overs</option>
-               <option value="10.0">10 overs</option>
-               <option value="15">15 overs</option>
-               <option value="20">20 overs</option>
+               <option value="5.0 ">5 overs</option>
+               <option value="10.0 ">10 overs</option>
+               <option value="15.0 ">15 overs</option>
+               <option value="20.0 ">20 overs</option>
               </select>
-             
           </div>
            
              <div>
                  <label >Team 1:</label>
-                 <input type='text' placeholder='enter team name'  />
+                 <input type='text'  placeholder='enter team name' value={team1Name} onChange={(e) => setTeam1Name(e.target.value)} />
             </div>
-            {/* <div>
-                 <label >Captain name:</label>
-                 <input type='text' placeholder='enter captain name' />
-            </div> */}
-           
-           {/* <div>
-            <label>Enter member:</label>
-            <div className='member'>
-            <input type='text' placeholder='enter member name' />
-            <input type='text' placeholder='enter contact no.' />
-            </div>
-            <div className='member'>
-            <input type='text' placeholder='enter member name' />
-            <input type='text' placeholder='enter contact no.' />
-            </div>
-            <div className='member'>
-            <input type='text' placeholder='enter member name' />
-            <input type='text' placeholder='enter contact no.' />
-            </div>
-            <div className='member'>
-            <input type='text' placeholder='enter member name' />
-            <input type='text' placeholder='enter contact no.' />
-            </div>
-            <div className='member'>
-            <input type='text' placeholder='enter member name' />
-            <input type='text' placeholder='enter contact no.' />
-            </div>
-            <div className='member'>
-            <input type='text' placeholder='enter member name' />
-            <input type='text' placeholder='enter contact no.' />
-            </div>
-            <div className='member'>
-            <input type='text' placeholder='enter member name' />
-            <input type='text' placeholder='enter contact no.' />
-            </div>
-            <div className='member'>
-            <input type='text' placeholder='enter member name' />
-            <input type='text' placeholder='enter contact no.' />
-            </div>
-            <div className='member'>
-            <input type='text' placeholder='enter member name' />
-            <input type='text' placeholder='enter contact no.' />
-            </div>
-            <div className='member'>
-            <input type='text' placeholder='enter member name' />
-            <input type='text' placeholder='enter contact no.' />
-            </div>
-            <div className='member'>
-            <input type='text' placeholder='enter member name' />
-            <input type='text' placeholder='enter contact no.' />
-            </div>
-            </div> */}
            </form>
-        </div>
-
         
-        {/* <div className='Team2'> */}
-        <form>
+      <form>
           
             
             <div>
                  <label >Team 2:</label>
-                 <input type='text' placeholder='enter team name' />
+                 <input type='text'  placeholder='enter team name' value={team2Name} onChange={(e) => setTeam2Name(e.target.value)}/>
             </div>
-            {/* <div>
-                 <label >Captain name:</label>
-                 <input type='text' placeholder='enter captain name' />
-            </div> */}
+            
            
-           {/* <div>
-            <label>Enter member:</label>
-            <div className='member'>
-            <input type='text' placeholder='enter member name' />
-            <input type='text' placeholder='enter contact no.' />
-            </div>
-            <div className='member'>
-            <input type='text' placeholder='enter member name' />
-            <input type='text' placeholder='enter contact no.' />
-            </div>
-            <div className='member'>
-            <input type='text' placeholder='enter member name' />
-            <input type='text' placeholder='enter contact no.' />
-            </div>
-            <div className='member'>
-            <input type='text' placeholder='enter member name' />
-            <input type='text' placeholder='enter contact no.' />
-            </div>
-            <div className='member'>
-            <input type='text' placeholder='enter member name' />
-            <input type='text' placeholder='enter contact no.' />
-            </div>
-            <div className='member'>
-            <input type='text' placeholder='enter member name' />
-            <input type='text' placeholder='enter contact no.' />
-            </div>
-            <div className='member'>
-            <input type='text' placeholder='enter member name' />
-            <input type='text' placeholder='enter contact no.' />
-            </div>
-            <div className='member'>
-            <input type='text' placeholder='enter member name' />
-            <input type='text' placeholder='enter contact no.' />
-            </div>
-            <div className='member'>
-            <input type='text' placeholder='enter member name' />
-            <input type='text' placeholder='enter contact no.' />
-            </div>
-            <div className='member'>
-            <input type='text' placeholder='enter member name' />
-            <input type='text' placeholder='enter contact no.' />
-            </div>
-            <div className='member'>
-            <input type='text' placeholder='enter member name' />
-            <input type='text' placeholder='enter contact no.' />
-            </div>
-            </div> */}
+            
           </form>
-        {/* </div> */}
+       
     </div>
    
 

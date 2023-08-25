@@ -2,7 +2,12 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import Wrapper from './style'
 
+
+
 const Enter = () => {
+
+  
+
     const navigate =  useNavigate();
     const register =() =>{
         navigate ('/register')

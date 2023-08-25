@@ -413,3 +413,11 @@
 
 // export default Wrapper
 
+
+//player file
+
+value={team1}
+onChange={(e) => {setTeam1(e.target.value)}
+
+value={team2}
+onChange={(e) => {setTeam2(e.target.value) }}

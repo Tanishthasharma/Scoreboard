@@ -19,22 +19,27 @@ export const App = () => {
    const [wickets,setWicket] = useState(0);
    const [timeline,setTimeline] = useState([]);
    const [isPopupOpen, setIsPopupOpen] = useState(false);
-   const [overs , setOvers] = useState(0);
-    
-   
-   
+   const [history, setHistory] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(-1);
+   const[overs,setOvers] = useState(0);
+   const [team1Name, setTeam1Name] = useState("");
+const [team2Name, setTeam2Name] = useState("");
+
+
    useEffect(() =>{
-    if(wickets === 10 )
-     {alert(`Inning Done!`)
+    if((wickets === 10) )
+     {
+      alert(`Inning Done!`)
       setWicket(wickets => 0)
       setScore(score => 0)
       setBalls(balls => 0 )
-    }
+      setTimeline([]);
+      
+      }
     },[wickets])
 
     
-     
-  
+
     const openPopup = () => {
       setIsPopupOpen(true);
     };
@@ -44,6 +49,22 @@ export const App = () => {
     };
     
 
+    const saveStateToHistory = () => {
+      const prevState = {
+        score,
+        balls,
+        wickets,
+        timeline: [...timeline],
+      };
+       
+  const historyCopy = [...history];
+ historyCopy.push(prevState);
+ setHistory(historyCopy);
+ setCurrentIndex(historyCopy.length - 1);
+      
+    };
+
+   
 
      return (
 
@@ -58,31 +79,41 @@ export const App = () => {
          wickets={wickets}
             timeline={timeline}
             balls={balls}
+            overs={overs}
+            team1Name={team1Name} 
+            team2Name={team2Name}
+           
             /><div><Control setScore = {setScore}
             setBalls={setBalls}
             setWicket={setWicket}
             setTimeline={setTimeline}
             openPopupCallback={openPopup} 
+            history={history}
+            saveStateToHistory={saveStateToHistory}
+            currentIndex={currentIndex}
+            setCurrentIndex={setCurrentIndex}
+            score={score}  
+         wickets={wickets}
+            timeline={timeline}
+            balls={balls}
+            
             />
             {isPopupOpen && (
               <Widepop handleClose={closePopup} setScore={setScore}>
-               
-              </Widepop>
+               </Widepop>
             )}</div></>} />
 
             
-        
-            
-       <Route path='/enter' element = {<Enter />} />
+        <Route path='/enter' element = {<Enter />} />
         <Route path="/login" element = {<Login/>} />
         <Route path="/register" element = {<Register/>} />
-        <Route path='/player'  element = { <Player  setOvers={setOvers}/>} />
+        <Route path='/player'  element = { <Player overs={overs} setOvers={setOvers}
+                                                              team1Name={team1Name} team2Name={team2Name}
+                                                                setTeam1Name={setTeam1Name}  setTeam2Name={setTeam2Name}
+                                                              />} />
         
-         
        </Routes>  
-       
-       
-        <Footer/>
+       <Footer/>
       </BrowserRouter>
      );
 }  
