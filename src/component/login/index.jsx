@@ -11,36 +11,34 @@ const Login = () => {
   const [contact , setContact] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) =>{
-    e.preventDefault();
-    console.log("Contact:",contact);
-    console.log("Password", password);
-  };
+  // const handleSubmit = (e) =>{
+  //   e.preventDefault();
+  //   console.log("Contact:",contact);
+  //   console.log("Password", password);
+  // };
 
   const submit = () =>{
     navigate ('/player')
   }
 
-  const register = () => {
-    navigate ('/register')
-  }
+  
 
   return (
   <Wrapper>
     <section>
-      <div onSubmit={handleSubmit}>
+    
         <div className="inner">
           <div className="loginForm">
           <h2>Login</h2>
             <form action=""  className="form">
               <input type="contact" placeholder="Contact"  className = "email" onChange={(e)=> setContact(e.target.value)} /> 
               <input type="password" placeholder = "Password"  className = "password" onChange={(e)=> setPassword(e.target.value)} />
-              <input type="button" value="Login"  id="userSubmitButton"  onClick={submit} />
-              <label htmlFor="">Don't have an Account ? <a href={register}>Register Here</a></label>
+              <input type="button" value="Login"  id="userSubmitButton"  onClick={submit}  disabled={!(contact,password)}/>
+              <label htmlFor="">Don't have an Account ? <a href="./register">Register Here</a></label>
             </form>
         </div>
         </div>
-      </div>
+     
     </section>
 </Wrapper>
   );

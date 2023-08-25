@@ -29,7 +29,7 @@ const [team2Name, setTeam2Name] = useState("");
    useEffect(() =>{
     if((wickets === 10) )
      {
-      alert(`Inning Done!`)
+      
       setWicket(wickets => 0)
       setScore(score => 0)
       setBalls(balls => 0 )
@@ -104,7 +104,7 @@ const [team2Name, setTeam2Name] = useState("");
             )}</div></>} />
 
             
-        <Route path='/enter' element = {<Enter />} />
+       
         <Route path="/login" element = {<Login/>} />
         <Route path="/register" element = {<Register/>} />
         <Route path='/player'  element = { <Player overs={overs} setOvers={setOvers}

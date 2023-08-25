@@ -12,7 +12,7 @@ export const Display = ({score,wickets,timeline,balls,team1Name,team2Name}) => {
  
   if (wickets === 10 && currentTeam === team1Name) {
     
-    if (window.confirm(`Wickets are 10 for ${team1Name}. Do you want to switch to ${team2Name}?`)) {
+    if (window.confirm(`!Inning Done`)) {
       setCurrentTeam(team2Name);
     }
   }

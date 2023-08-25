@@ -78,10 +78,16 @@ const Control = ({setScore,setBalls,setWicket,setTimeline,openPopupCallback,hist
       setTimeline(timeline => [...timeline, value])
      
         break;
-       case  "LB+/B+" :
+       case  "LB+" :
         
           setTimeline(timeline => [...timeline, value])
          break;
+         
+         case  "Bye" :
+        
+         setTimeline(timeline => [...timeline, value])
+        break;
+
         case "Undo":
           
      handleUndo();
@@ -110,7 +116,7 @@ const Control = ({setScore,setBalls,setWicket,setTimeline,openPopupCallback,hist
       <input type="button" value={"PENALTY"} onClick={updateScore}/>
       <input type="button" value={"Undo"} onClick={updateScore} disabled={timeline.length < 1}/>
        
-      <input type="button" value={5} onClick={updateScore}/>
+      <input type="button" value={"Bye"} onClick={updateScore}/>
       <input type="button" value={3} onClick={updateScore}/>
       
       <input type="button" value={2} onClick={updateScore}/>
@@ -119,7 +125,7 @@ const Control = ({setScore,setBalls,setWicket,setTimeline,openPopupCallback,hist
       <input type="button" value={0} onClick={updateScore}/>
       <input type="button" value={1} onClick={updateScore}/>
       <input type="button" value={6} onClick={updateScore}/>
-      <input type="button" value={"LB+/B+"} onClick={updateScore}/>
+      <input type="button" value={"LB+"} onClick={updateScore}/>
       <input type="button" value={"NoBall"} onClick={updateScore}/>
       <input type="button" value={"OUT"} onClick={updateScore}/>
      

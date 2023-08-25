@@ -49,7 +49,7 @@ const Player = ({overs,setOvers,setTeam1Name,team1Name,team2Name,setTeam2Name}) 
    
 
     <div className='lets'>
-    <input type='button' value={"Lets Play"}  onClick={start} />
+    <input type='button' value={"Lets Play"}  onClick={start}  disabled={!(team1Name,team2Name)}/>
     </div>
 
     </Wrapper>
