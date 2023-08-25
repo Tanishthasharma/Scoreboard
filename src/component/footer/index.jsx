@@ -1,10 +1,10 @@
 // import React from 'react'
 import Wrapper from './style';
 
-const Footer = () => {
+const Footer = () => {  
   return (
    <Wrapper>
-      <p> &copy; 2023, SCOREZZ, All rights reserved</p>
+      <p> &copy; 2023, Criczzac, All rights reserved</p>
    </Wrapper>
   )
 }

@@ -2,12 +2,26 @@ import React from 'react'
 import Wrapper from './style'
 import { useNavigate } from 'react-router-dom'
 
-const Player = () => {
+const Player = ({setBalls , setOvers}) => {
 
     const navigate = useNavigate();
     const start = () =>{
          navigate('/display')
+         
+
     }
+    const totalOvers = (e) =>{
+     const value = e.target.value;
+     switch(value) {
+          case "5.0":
+          case "10.0":
+          case "15.0":
+          case "20.0":          
+     
+     //  setBalls(balls => value * 6)
+      setOvers(overs => value)
+    }
+}
    
   return (
     <Wrapper>
@@ -18,10 +32,10 @@ const Player = () => {
                <label>Overs:</label>
               <select name='overs' id='overs'>
               <option disabled selected>...select overs..</option>
-               <option value="5 overs">5 overs</option>
-               <option value="10 overs">10 overs</option>
-               <option value="15 overs">15 overs</option>
-               <option value="20 overs">20 overs</option>
+               <option value="5.0" onSelect={totalOvers}>5 overs</option>
+               <option value="10.0">10 overs</option>
+               <option value="15">15 overs</option>
+               <option value="20">20 overs</option>
               </select>
              
           </div>

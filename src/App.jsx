@@ -19,11 +19,12 @@ export const App = () => {
    const [wickets,setWicket] = useState(0);
    const [timeline,setTimeline] = useState([]);
    const [isPopupOpen, setIsPopupOpen] = useState(false);
+   const [overs , setOvers] = useState(0);
     
    
    
    useEffect(() =>{
-    if(wickets === 10)
+    if(wickets === 10 )
      {alert(`Inning Done!`)
       setWicket(wickets => 0)
       setScore(score => 0)
@@ -75,7 +76,7 @@ export const App = () => {
        <Route path='/enter' element = {<Enter />} />
         <Route path="/login" element = {<Login/>} />
         <Route path="/register" element = {<Register/>} />
-        <Route path='/player'  element = { <Player />} />
+        <Route path='/player'  element = { <Player  setOvers={setOvers}/>} />
         
          
        </Routes>  
