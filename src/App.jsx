@@ -1,5 +1,6 @@
 
 import { BrowserRouter,Routes, Route} from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Header from './component/header'
 import Register  from './component/register'
@@ -8,9 +9,7 @@ import Footer from './component/footer';
 import Control from './component/control'
 import Display from './component/display'
 import Login from './component/login';
-import Enter from './component/enter' 
 import Player from './component/player'
-import { useEffect, useState } from 'react';
 import Widepop from './component/widepop'
 
 export const App = () => {
@@ -25,20 +24,6 @@ export const App = () => {
    const [team1Name, setTeam1Name] = useState("");
 const [team2Name, setTeam2Name] = useState("");
 
-
-   useEffect(() =>{
-    if((wickets === 10) )
-     {
-      
-      setWicket(wickets => 0)
-      setScore(score => 0)
-      setBalls(balls => 0 )
-      setTimeline([]);
-      
-      }
-    },[wickets])
-
-    
 
     const openPopup = () => {
       setIsPopupOpen(true);
@@ -82,7 +67,11 @@ const [team2Name, setTeam2Name] = useState("");
             overs={overs}
             team1Name={team1Name} 
             team2Name={team2Name}
-           
+            setScore = {setScore}
+            setBalls={setBalls}
+            setWicket={setWicket}
+            setTimeline={setTimeline}
+            
             /><div><Control setScore = {setScore}
             setBalls={setBalls}
             setWicket={setWicket}
@@ -93,7 +82,7 @@ const [team2Name, setTeam2Name] = useState("");
             currentIndex={currentIndex}
             setCurrentIndex={setCurrentIndex}
             score={score}  
-         wickets={wickets}
+            wickets={wickets}
             timeline={timeline}
             balls={balls}
             

@@ -11,10 +11,13 @@ export const Register = () => {
   const [contact , setContact ] = useState("");
 
   const submit = () =>{
-   navigate('/player')
-   localStorage.setItem("name",{name})
-   localStorage.setItem("contact",{contact})
-   localStorage.setItem("password",{password})
+   navigate('/login')
+   localStorage.setItem("name",name)
+   localStorage.setItem("contact",contact)
+   localStorage.setItem("password",password)
+   console.log("name",localStorage.getItem("name"))
+   console.log("contact",contact)
+   console.log("password",password)
   } 
 
   return (

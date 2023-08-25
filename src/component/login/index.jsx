@@ -1,6 +1,4 @@
 import React , {useState} from "react";
-
-import Register from "../register";
 import Wrapper from "./style";
 import { useNavigate } from "react-router-dom";
 
@@ -14,8 +12,19 @@ const Login = () => {
   
 
   const submit = () =>{
-    navigate ('/player')
-  }
+   
+    const logContact = localStorage.getItem("contact")
+    const logPassword = localStorage.getItem("password")
+    console.log("contact: ", contact)
+    console.log(" password:", password )
+    console.log("logPassword",logPassword)
+    console.log("logContact",logContact)
+    if(contact === logContact && password === logPassword){
+      navigate('/player')
+    }
+    else{navigate('/login')
+      alert("Wrong Credentials")}
+  };
 
   
 
