@@ -53,6 +53,31 @@ const Control = ({setScore,setBalls,setWicket,setTimeline,openPopupCallback,hist
        
         setScore(score => score + parseInt(value))
         setBalls(balls =>balls + 1)
+    //     setWicket(wickets => wickets + 1)
+    //     setTimeline(timeline => [...timeline,value])
+    //     break;
+    //  case "NoBall" :
+    //   setScore(score => score +1)
+    //   openPopupCallback() ;
+    //   setTimeline(timeline => [...timeline, value])
+    //     break;
+    //    case  "LB+/B+" :
+    //     setTimeline(timeline => [...timeline, value])
+    //     break;
+    //    case "UNDO" :
+    //     // timeline.map(item => item.pop());
+    //     // setTimeline(timeline => [...timeline , timeline] ) 
+    //     if(tl[tl.length - 1] === 4){
+    //       setScore(score => score -  4)
+          
+    //       setTimeline(timeline => [...timeline,...timeline.pop()])
+    //       setBalls(balls => balls - 1)
+    //       tl.pop()
+         
+    //     }
+    //      break;
+
+        
        setTimeline(timeline => [...timeline,value])
       
      

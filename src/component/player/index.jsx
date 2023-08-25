@@ -7,6 +7,8 @@ const Player = ({overs,setOvers,setTeam1Name,team1Name,team2Name,setTeam2Name}) 
     const navigate = useNavigate();
     const start = () =>{
          navigate('/display')
+         
+
     }
 
     

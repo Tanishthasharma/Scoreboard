@@ -11,11 +11,7 @@ const Login = () => {
   const [contact , setContact] = useState("");
   const [password, setPassword] = useState("");
 
-  // const handleSubmit = (e) =>{
-  //   e.preventDefault();
-  //   console.log("Contact:",contact);
-  //   console.log("Password", password);
-  // };
+  
 
   const submit = () =>{
     navigate ('/player')
@@ -44,4 +40,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Login;
