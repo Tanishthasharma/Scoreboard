@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Wrapper from "./style"
 import { useEffect } from 'react';
 

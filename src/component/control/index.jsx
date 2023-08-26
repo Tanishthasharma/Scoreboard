@@ -37,9 +37,6 @@ const Control = ({setScore,setBalls,setWicket,setTimeline,openPopupCallback,hist
   const updateScore = (e) =>{
     const value = e.target.value 
     
-    
-    
-
     switch(value){
       case "0":
        
@@ -84,6 +81,10 @@ const Control = ({setScore,setBalls,setWicket,setTimeline,openPopupCallback,hist
          setTimeline(timeline => [...timeline, value])
         break;
 
+        case "PENALTY" :
+          openPopupCallback() ;
+          break;
+          
         case "Undo":
           
      handleUndo();
@@ -91,9 +92,7 @@ const Control = ({setScore,setBalls,setWicket,setTimeline,openPopupCallback,hist
         default:
           break; 
 
-          case "PENALTY" :
-            openPopupCallback() ;
-            break;
+        
     }
     
     

@@ -28,7 +28,7 @@ import { useNavigate } from 'react-router-dom';
         
         const team1Score = localStorage.getItem(`${team1Name}_score`);
         localStorage.setItem(`${team1Name}_score`, parseInt(team1Score) + score);
-        console.log(`${team1Name} Score: ${localStorage.getItem(`${team1Name}_score`)}`);
+         console.log(`${team1Name} Score: ${localStorage.getItem(`${team1Name}_score`)}`);
         
         setBalls(0);
         setScore(0);
@@ -36,7 +36,7 @@ import { useNavigate } from 'react-router-dom';
         setTimeline([]);
       }
     }
-  }, [wickets, currentTeam, team1Name, team2Name, score, setScore, setWicket, setTimeline]);
+  }, [wickets, currentTeam, team1Name, team2Name, score, setScore, setWicket, setTimeline,setBalls]);
 
   useEffect(() => {
     if (wickets === 10 && currentTeam === team2Name) {
@@ -81,7 +81,7 @@ import { useNavigate } from 'react-router-dom';
  
  
   
-  const matchResult = getMatchResult();
+ 
 
   return (
    

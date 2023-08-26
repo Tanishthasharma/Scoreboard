@@ -22,7 +22,7 @@ export const App = () => {
   const [currentIndex, setCurrentIndex] = useState(-1);
    const[overs,setOvers] = useState(0);
    const [team1Name, setTeam1Name] = useState("");
-const [team2Name, setTeam2Name] = useState("");
+  const [team2Name, setTeam2Name] = useState("");
 
 
     const openPopup = () => {

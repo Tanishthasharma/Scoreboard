@@ -19,7 +19,6 @@ const Wrapper = styled.section`
 
       .timeline-item{
         border-radius:50%;
-        // width:30px;
         height:35px;
         padding:4px;
         background-color:lightblue;
