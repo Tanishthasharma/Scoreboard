@@ -30,6 +30,7 @@ import { useNavigate } from 'react-router-dom';
         localStorage.setItem(`${team1Name}_score`, parseInt(team1Score) + score);
         console.log(`${team1Name} Score: ${localStorage.getItem(`${team1Name}_score`)}`);
         
+        setBalls(0);
         setScore(0);
         setWicket(0);
         setTimeline([]);
@@ -94,6 +95,7 @@ import { useNavigate } from 'react-router-dom';
             Score : {score}/{wickets}
           </p>
           <p>
+
             Overs: {`${Math.floor(balls / 6)}.${balls % 6}`} 
           </p>
           
