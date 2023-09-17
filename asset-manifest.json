@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Cricket_Scoreboard/static/css/main.b339951d.css",
+    "main.js": "/Cricket_Scoreboard/static/js/main.800d2783.js",
+    "index.html": "/Cricket_Scoreboard/index.html",
+    "main.b339951d.css.map": "/Cricket_Scoreboard/static/css/main.b339951d.css.map",
+    "main.800d2783.js.map": "/Cricket_Scoreboard/static/js/main.800d2783.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b339951d.css",
+    "static/js/main.800d2783.js"
+  ]
+}
